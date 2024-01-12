@@ -5,7 +5,6 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-
 }
 
 :root {
@@ -73,6 +72,7 @@ body {
 #trailers {
     width: 280px;
 }
+
 #trailers > h2 {
     margin-bottom: 24px;
     text-transform: uppercase;
@@ -80,7 +80,7 @@ body {
     letter-spacing: 2px;
 }
 
-#trailers > img {
+#trailers > div > img {
     width: 280px;
     border: 2px solid var(--primary-color);
     border-radius: 4px;
@@ -97,6 +97,8 @@ body {
 
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 2px;
+
+    font-family: 'Arial', sans-serif;
 }
 
 #buttons__container {
@@ -135,7 +137,7 @@ body {
 #footer__container {
     width: 580px;
     display: flex;
-    gap: 20px;
+    gap: 48px;
     align-items: center;
     justify-content: space-around;
     text-transform: uppercase;
@@ -153,4 +155,82 @@ ul {
 li {
     list-style: none;
     cursor: pointer;
+}
+
+@media (min-width: 481px) and (max-width: 1125px) {
+
+    #header__container{
+        margin-bottom: 80px;
+    }
+
+    #main__container {
+        gap: 20px;
+    }
+
+    #trailers {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    #trailers > div  {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        margin-bottom: 20px;
+    }
+
+    #trailers > div > img {
+        flex-grow: 1;
+    }
+
+    #footer__container {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 480px) {
+
+    * {
+        font-size: 10px;
+    }
+
+    #container {
+        width: 100%;
+    }
+
+    #header__container {
+        margin-bottom: 10px;
+    }
+
+    #trailers {
+        display: none;
+    }
+
+    #title {
+        font-size: 64px;
+    }
+
+    #subtitle {
+        font-size: 64px;
+    }
+
+    #footer__container {
+        width: 100%;
+    }
+
+    #footer__container p {
+        display: none;
+    }
+    
+    #header-buttons__container {
+        display: none;
+    }
+
+    #buttons__container {
+        flex-direction: column;
+        gap: 20px
+    }
 }
