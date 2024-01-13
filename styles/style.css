@@ -84,6 +84,10 @@ body {
     border-radius: 4px;
 }
 
+#trailers > div > img:last-child {
+    margin-top: 12px;
+}
+
 #title {
     font-size: 128px;
     text-transform: uppercase;
@@ -188,7 +192,6 @@ li {
 
     #trailers > div > img {
         flex-grow: 1;
-        height: 250px;
     }
 
     #footer__container {
