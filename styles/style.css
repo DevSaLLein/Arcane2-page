@@ -84,6 +84,10 @@ body {
     border-radius: 4px;
 }
 
+#trailers > div > img:last-child {
+    margin-top: 12px;
+}
+
 #title {
     font-size: 128px;
     text-transform: uppercase;
