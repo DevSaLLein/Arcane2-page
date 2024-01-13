@@ -20,8 +20,6 @@
 
 body {
     background: url('./image/wallpaper.svg') no-repeat top center/cover;
-    height: 100dvh;
-    width: 100%;
 }
 
 #container {
@@ -157,10 +155,17 @@ li {
     cursor: pointer;
 }
 
-@media (min-width: 481px) and (max-width: 1125px) {
+@media (min-width: 681px) and (max-width: 1125px) {
 
+    #title {
+        font-size: 68px;
+    }
+
+    #subtitle {
+        font-size: 68px;
+    }
     #header__container{
-        margin-bottom: 80px;
+        margin-bottom: 30px;
     }
 
     #main__container {
@@ -183,6 +188,7 @@ li {
 
     #trailers > div > img {
         flex-grow: 1;
+        height: 250px;
     }
 
     #footer__container {
@@ -191,7 +197,7 @@ li {
     }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 680px) {
 
     * {
         font-size: 10px;
