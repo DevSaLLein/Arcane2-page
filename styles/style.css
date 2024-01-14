@@ -20,6 +20,7 @@
 
 body {
     background: url('./image/wallpaper.svg') no-repeat top center/cover;
+    overflow: hidden;
 }
 
 #container {
@@ -34,6 +35,86 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 144px;
+}
+
+nav {
+    position: relative;
+}
+
+nav > ul {
+    position: absolute;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    
+    gap: 12px;
+    padding: 15px 12px;
+    border-radius: 12px 2px 12px 2px;
+
+    background-color: rgba(255, 255, 255, 0.046);
+    
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    width: 48px;
+    height: 38px;
+    z-index: 1;
+    justify-content: end;
+    visibility: hidden;
+
+    transition: .3s ease;
+    overflow-x: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    gap: 20px;
+}
+
+nav > ul > li {
+    color: transparent
+}
+
+nav.active > ul > li {
+    text-transform: capitalize;
+    color: white
+}
+
+nav.active ul {
+    visibility: visible;
+    height: 165px;
+    width: 140px;
+    border-radius: 12px;
+}
+
+#header__container > nav.active img {
+    background-color: rgba(255, 255, 255, 0.046);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid transparent;
+} 
+
+#header__container > nav.active img:hover {
+    border: 1px solid transparent;
+}
+
+#header__container > nav > img {
+    position: absolute;
+    padding: 12px;
+    border-radius: 12px 2px 12px 2px;
+    cursor: pointer;
+    transition: background .3s ease;
+    z-index: 2;
+
+    background-color: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.134);
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+#header__container > nav > img:hover {
+    background-color: rgba(255, 255, 255, 0.13);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 #header-buttons__container {
@@ -82,6 +163,12 @@ body {
     width: 280px;
     border: 2px solid var(--primary-color);
     border-radius: 4px;
+
+    transition: transform .4s ease;
+}
+
+#trailers > div > img:hover {
+    transform: scale(1.2);
 }
 
 #trailers > div > img:last-child {
@@ -168,6 +255,7 @@ li {
     #subtitle {
         font-size: 68px;
     }
+
     #header__container{
         margin-bottom: 30px;
     }
@@ -194,6 +282,10 @@ li {
         flex-grow: 1;
     }
 
+    #header__container > img:hover{
+        transform: scale(1);
+    }
+
     #footer__container {
         width: 100%;
         justify-content: space-between;
@@ -201,6 +293,15 @@ li {
 }
 
 @media screen and (max-width: 680px) {
+
+    nav.active ul li {
+        font-size: 16px;
+    }
+
+    #header__container > nav.active > img:hover {
+        border: 1px solid transparent;
+        background-color: transparent;
+    } 
 
     * {
         font-size: 10px;
@@ -216,6 +317,10 @@ li {
 
     #trailers {
         display: none;
+    }
+
+    #header__container > img:hover{
+        transform: scale(1);
     }
 
     #title {
