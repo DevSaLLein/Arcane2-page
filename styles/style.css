@@ -53,8 +53,8 @@ nav > ul {
 
     background-color: rgba(255, 255, 255, 0.046);
     
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 
     width: 48px;
     height: 38px;
@@ -108,8 +108,8 @@ nav.active ul {
     background-color: rgba(255, 255, 255, 0.10);
     border: 1px solid rgba(255, 255, 255, 0.134);
 
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(3px);
 }
 
 #header__container > nav > img:hover {
@@ -293,18 +293,13 @@ li {
 }
 
 @media screen and (max-width: 680px) {
-
-    nav.active ul li {
-        font-size: 16px;
-    }
-
-    #header__container > nav.active > img:hover {
-        border: 1px solid transparent;
-        background-color: transparent;
-    } 
-
+    
     * {
         font-size: 10px;
+    }
+
+    nav.active ul li {
+        font-size: 1.7rem;
     }
 
     #container {
