@@ -159,7 +159,7 @@ nav.active ul {
     letter-spacing: 2px;
 }
 
-#trailers > div > img {
+#trailers > div > a > img {
     width: 280px;
     border: 2px solid var(--primary-color);
     border-radius: 4px;
@@ -167,7 +167,7 @@ nav.active ul {
     transition: transform .4s ease;
 }
 
-#trailers > div > img:hover {
+#trailers > div > a > img:hover {
     transform: scale(1.2);
 }
 
