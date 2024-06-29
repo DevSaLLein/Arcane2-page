@@ -7,6 +7,11 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+html {
+    font-size: 16px;
+    user-select: none;
+}
+
 :root {
     --primary-color: #0080C8;
     --secundary-color: #E7E7E7;
@@ -46,50 +51,52 @@ nav > ul {
     list-style: none;
     display: flex;
     flex-direction: column;
-    
+    align-items: flex-start;
+
+    padding: 12px;
     gap: 12px;
-    padding: 15px 12px;
     border-radius: 12px 2px 12px 2px;
 
-    background-color: rgba(255, 255, 255, 0.046);
+    background-color: rgba(255, 255, 255, 0.05);
     
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 
-    width: 48px;
-    height: 38px;
+    width: 0px;
+    height: 0px;
     z-index: 1;
+    opacity: 0;
     justify-content: end;
-    visibility: hidden;
 
     transition: .3s ease;
     overflow-x: hidden;
 
     border: 1px solid rgba(255, 255, 255, 0.15);
-
+    
     gap: 20px;
+
+    transition: all .2s ease;
 }
 
 nav > ul > li {
+    font-size: 1.1rem;
     color: transparent
 }
 
 nav.active > ul > li {
     text-transform: capitalize;
-    color: white
+    color: white;
+    width: max-content;
 }
 
 nav.active ul {
-    visibility: visible;
-    height: 165px;
-    width: 140px;
+    opacity: 1;
+    height: 160px;
+    width: 150px;
     border-radius: 12px;
 }
 
 #header__container > nav.active img {
-    background-color: rgba(255, 255, 255, 0.046);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
     border: 1px solid transparent;
 } 
 
@@ -105,7 +112,6 @@ nav.active ul {
     transition: background .3s ease;
     z-index: 2;
 
-    background-color: rgba(255, 255, 255, 0.10);
     border: 1px solid rgba(255, 255, 255, 0.134);
 
     backdrop-filter: blur(1px);
@@ -176,12 +182,12 @@ nav.active ul {
 }
 
 #title {
-    font-size: 128px;
+    font-size: 8rem;
     text-transform: uppercase;
 }
 
 #subtitle {
-    font-size: 128px;
+    font-size: 8rem;
     text-transform: uppercase;
 
     -webkit-text-fill-color: transparent;
@@ -193,7 +199,7 @@ nav.active ul {
 #buttons__container {
     margin-top: 48px;
     display: flex;
-    gap: 40px;
+    gap: 20px;
 }
 
 #buttons__container > button:nth-child(1) {
@@ -242,18 +248,39 @@ ul {
 }
 
 li {
+    position: relative;
     list-style: none;
     cursor: pointer;
 }
 
+li::after {
+    position: absolute;
+    content: '';
+    background-color: #E7E7E7;
+    border-radius: 10px;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 0px;
+    transition: all .2s ease;
+}
+
+li:hover::after {
+    width: 100%;
+}
+
 @media (min-width: 681px) and (max-width: 1125px) {
 
+    html {
+        font-size: 16px;
+    }
+
     #title {
-        font-size: 68px;
+        font-size: 4.8rem;
     }
 
     #subtitle {
-        font-size: 68px;
+        font-size: 4.8rem;
     }
 
     #header__container{
@@ -261,12 +288,14 @@ li {
     }
 
     #main__container {
+        justify-content: center;
         gap: 20px;
+        flex-direction: column;
     }
 
     #trailers {
         display: flex;
-        width: 100%;
+        width: max-content;
         flex-direction: column;
     }
 
@@ -276,10 +305,6 @@ li {
         align-items: center;
         gap: 32px;
         margin-bottom: 20px;
-    }
-
-    #trailers > div > img {
-        flex-grow: 1;
     }
 
     #header__container > img:hover{
@@ -298,8 +323,12 @@ li {
         font-size: 10px;
     }
 
+    html {
+        font-size: 14px;
+    }
+
     nav.active ul li {
-        font-size: 1.7rem;
+        font-size: 1.3rem;
     }
 
     #container {
